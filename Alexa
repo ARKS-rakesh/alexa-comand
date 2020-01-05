@@ -1,0 +1,95 @@
+Install Raspbian on Raspberry Pi:-
+
+Download Noobs for your Pi   Click Here  
+Format your SD Card
+Extract all the Noobs files to your SD Card
+Safely Eject your SD Card
+Insert SD Card to your Raspberry Pi
+Connect the required hardware(Keyboard, Mouse, Display) and power ON your PI
+Setup your Wifi Network on PI, Select Raspbian and click Install.
+
+Install Alexa on your Raspberry Pi:-
+
+Before starting our project first Update and Upgrade your PI:-
+
+sudo apt-get upgrade
+
+
+SDK installation and configuration scripts:-
+
+wget https://raw.githubusercontent.com/alexa/avs-device-sdk/master/tools/Install/setup.sh \
+wget https://raw.githubusercontent.com/alexa/avs-device-sdk/master/tools/Install/genConfig.sh \
+wget https://raw.githubusercontent.com/alexa/avs-device-sdk/master/tools/Install/pi.sh
+
+
+Create your Product on Amazon   Click Here  
+
+
+Download and copy the "config.json" file to "home/pi" folder in Raspberry Pi
+
+
+Run the file:-
+
+cd /home/pi/
+sudo bash setup.sh config.json [-s 1234]
+
+
+Type "AGREE" when it prompts you to accept the licensing terms and press Enter
+After about 15 minutes it will pause
+press Enter and type "yes"
+
+Launch Sample App:-
+
+cd /home/pi/
+sudo bash startsample.sh
+
+
+Scroll up in Terminal and get your Authentication code and open the link   Click Here   and register Code
+
+
+Start Alexa:-
+
+sudo bash /home/pi/startsample.sh
+
+
+
+Auto Start Alexa on Boot:-
+
+Make Copy bash file for safety if you want or you can skip this step
+
+cp /home/pi/.bashrc /home/pi.bashrc-original
+
+
+open bash file:-
+
+sudo nano /home/pi/.bashrc
+
+
+Add new line at bottom:-
+
+sudo bash /home/pi/startsample.sh
+
+
+press "ctrl+x" to exit and "Y" to save
+
+
+when you open the terminal now it will automatically start the Alexa
+
+
+Reboot
+
+sudo reboot
+
+
+enter configuration:-
+
+sudo raspi-config
+
+
+Go to Boot Options   ->   B1 Desktop / CLI   ->   B2 console Autologin Text Console, automatically logged in as 'pi' user
+
+
+Reboot and you are Done.
+
+
+
